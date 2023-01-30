@@ -1,0 +1,79 @@
+body {
+    margin: 0px;
+    padding: 0px;
+
+}
+.calc {
+    width: 400px;
+}
+
+.display {
+    display: grid;
+    background-color: black;
+    color: white;
+    font-size: 45px;
+    text-align: right;
+    height: 60px;
+    padding-top: 15px;
+    padding-right: 10px;
+}
+
+.teclado {
+    display: grid;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+button {
+    font-size: 40px;
+    cursor: pointer;
+    padding: 0px;
+    margin: 0px;
+}
+.linea {
+    display: flex;
+    justify-content: space-between;
+}
+
+.operadores {
+    background-color: orange;
+    color: white;
+    width: 100px;
+    height: 110px;
+    font-size: 45px;
+}
+
+.operadores:hover {
+    background-color: rgba(229, 160, 33, 0.659);
+}
+
+.numeros-borradores {
+    background-color: lightgrey;
+    width: 100px;
+    height: 110px;
+}
+
+.numeros-borradores:hover {
+    background-color: rgba(211, 211, 211, 0.638);
+}
+
+.cero {
+    background-color: lightgrey;
+    width: 300px;
+    height: 110px;
+}
+
+.cero:hover {
+    background-color: rgba(211, 211, 211, 0.665);
+}
+
+.clearBoton {
+    background-color: lightgrey;
+    width: 200px;
+    height: 110px;
+}
+
+.clearBoton:hover {
+    background-color: rgba(211, 211, 211, 0.567);
+}

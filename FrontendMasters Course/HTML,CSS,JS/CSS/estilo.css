@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #efefef;
+}
+
+.Header {
+    background-color:#43281c;
+    position: relative;
+    color: #fbf2c0;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+    padding-left: 6px;
+}
+
+.logo {
+    height: 25px;
+    position: relative;
+    top: 3px;
+    right: 6px;
+}
+
+h1.Header {
+    font-weight: bold;
+}
+
+.box {
+    background-color:#eee1d5;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgb(0 0 0/ 0.2);
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.page {
+    display: grid;
+    row-gap: 30px;
+    column-gap: 30px;
+    width: 100%;
+    padding: 30px;
+    margin: 0 auto;
+    grid-template-areas: "order payment"
+    "total total";
+    grid-template-columns: 1fr 1fr;
+}
+
+.order{
+    grid-area:order;
+}
+
+.payment{
+    grid-area: payment;
+}
+
+.total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-area: total;
+}
+
+.listed-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    display: block;    
+}
+
+li {
+    display: list-item;
+}
+
+.sublist {
+    grid-area: sublist;
+    color: #B08968;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.item {
+    border-bottom: 2px solid #DDB892;
+    display: grid;
+    padding: 10px 0;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-areas: "cantidad producto price"
+    "cantidad sublist price";
+    row-gap: 8px;
+}
+
+.item-cantidad {
+    grid-area: cantidad;
+}
+
+.item-producto {
+    grid-area: producto;
+    font-weight: bold;
+}
+
+.item-price {
+    grid-area: price;
+    font-weight: bold;
+}
+
+.box-title {
+    color: #885a2d;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.totals-table {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.final-totals {
+    font-weight: bold;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.user-input-label {
+    color: #885a2d;
+    background-color: #eee1d5;
+    font-size: 11px;
+    position: absolute;
+    left: 25px;
+    top: -7px;
+    padding: 0 2px;
+}
+
+.user-input {
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px #885a2d solid;
+    padding: 8px;
+    border-radius: 100px;
+    width: 100%;
+    text-indent: 18px;
+    font-size: 18px;
+}
+
+.checkout {
+    background-color: #deb993;
+    width: 100%;
+    padding: 10px;
+    border-radius: 100px;
+    border-color: white;
+    font-size: 16px;
+}
