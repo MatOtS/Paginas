@@ -15,7 +15,7 @@ console.log(NewDisplay)
 
 //Con eso se puede modificar el HTML del elemento screen/display, ahora, tengo que ver cómo extraer cada uno de los elementos de los botones, distinguiendo los numeros, los operadores y los borradores
 //Una buena idea sería guardar estos "diferenciadores" en funciones: 
-
+// Lo que podría hacer es poner un onclick evento en el html y guardarlo la const de Display, reemplazo el 0 por esos número, tengo que hacers conversión a int después de que haya clickado en un símbolo matemático 
 
 
 
