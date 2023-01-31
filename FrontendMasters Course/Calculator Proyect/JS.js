@@ -15,7 +15,15 @@ console.log(NewDisplay)
 
 //Con eso se puede modificar el HTML del elemento screen/display, ahora, tengo que ver cómo extraer cada uno de los elementos de los botones, distinguiendo los numeros, los operadores y los borradores
 //Una buena idea sería guardar estos "diferenciadores" en funciones: 
+
+
+
+
+
+
 function Numeros()
+
 function Operadores()
+
 function Borradores()
 
