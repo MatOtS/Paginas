@@ -1,29 +1,36 @@
 //hecho en la Mac
 
-const Display = Number(document.querySelector(".display").innerHTML)
+let Display = document.querySelector(".display").innerHTML
+let operador = ""
+//console.log(Display)
 
-console.log(Display)
-
-const oper = Display + 7
+//const oper = Display + 7
 
 //Ya tengo el elemento con la clase display/screen en una variable, ya le extraje el HTML y converti ese string en int(integer) todo en la variable Display.
 //Ahora que ya se puede trabajar sobre esa variable, necestio poder editar el inner HTML del elemento display.
 
-const NewDisplay = document.querySelector(".display").innerHTML = oper
+//const NewDisplay = document.querySelector(".display").innerHTML = oper
 
-console.log(NewDisplay)
+//console.log(NewDisplay)
 
-//Con eso se puede modificar el HTML del elemento screen/display, ahora, tengo que ver cómo extraer cada uno de los elementos de los botones, distinguiendo los numeros, los operadores y los borradores
-//Una buena idea sería guardar estos "diferenciadores" en funciones: 
-// Lo que podría hacer es poner un onclick evento en el html y guardarlo la const de Display, reemplazo el 0 por esos número, tengo que hacers conversión a int después de que haya clickado en un símbolo matemático 
+//Con eso se puede modificar el HTML del elemento screen/display, ahora, tengo que ver cómo extraer cada uno de los elementos de los botones, distinguiendo los numeros y los operadores
 
+document.querySelector(".teclado").addEventListener("click", function(event){
+    console.log(event.target.innerText)
+    let eventClick = event.target.innerHTML
+    let operador = ""
+    if (isNaN(eventClick)) {
+        operador = eventClick
+        console.log(operador)
+        return operador
+    } else {
+    console.log(operador)
+    Display += event.target.innerHTML
+    document.querySelector(".display").innerHTML = Number(Display)
+}});
 
+function noNumero () {
+    let valor = ""
+    let oper = ""
 
-
-
-function Numeros()
-
-function Operadores()
-
-function Borradores()
-
+}
