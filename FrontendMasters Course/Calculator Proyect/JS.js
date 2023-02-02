@@ -16,20 +16,16 @@ let operador = ""
 //Con eso se puede modificar el HTML del elemento screen/display, ahora, tengo que ver cómo extraer cada uno de los elementos de los botones, distinguiendo los numeros y los operadores
 
 document.querySelector(".teclado").addEventListener("click", function(event){
-    console.log(event.target.innerText)
     let eventClick = event.target.innerHTML
-    let operador = ""
     if (isNaN(eventClick)) {
-        operador = eventClick
-        console.log(operador)
+        Operacion (eventClick,Number(Display))
     } else {
-    console.log(operador)
-    Display += event.target.innerHTML
-    document.querySelector(".display").innerHTML = Number(Display)
+        Display += event.target.innerHTML
+        document.querySelector(".display").innerHTML = Number(Display)
 }});
 
-function noNumero () {
-    let valor = ""
+function Operacion (string,number) {
+    console.log(string)
+    console.log(number)
     let oper = ""
-
 }
