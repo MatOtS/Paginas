@@ -22,7 +22,6 @@ document.querySelector(".teclado").addEventListener("click", function(event){
     if (isNaN(eventClick)) {
         operador = eventClick
         console.log(operador)
-        return operador
     } else {
     console.log(operador)
     Display += event.target.innerHTML
