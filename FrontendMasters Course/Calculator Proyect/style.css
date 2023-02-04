@@ -36,7 +36,7 @@ button {
     justify-content: space-between;
 }
 
-.operadores {
+#operadores {
     background-color: orange;
     color: white;
     width: 100px;
@@ -44,36 +44,54 @@ button {
     font-size: 45px;
 }
 
-.operadores:hover {
+#operadores:hover {
     background-color: rgba(229, 160, 33, 0.659);
 }
 
-.numeros-borradores {
+#operadores:active {
+    background-color: orange;
+}
+
+#numeros-borradores {
     background-color: lightgrey;
     width: 100px;
     height: 110px;
 }
 
-.numeros-borradores:hover {
-    background-color: rgba(211, 211, 211, 0.638);
+
+
+#numeros-borradores:hover {
+    background-color: #d3d3d3a3;
 }
 
-.cero {
+#numeros-borradores:active {
+    background-color: grey
+}
+
+#cero {
     background-color: lightgrey;
     width: 300px;
     height: 110px;
 }
 
-.cero:hover {
+#cero:hover {
     background-color: rgba(211, 211, 211, 0.665);
 }
 
-.clearBoton {
+#cero:active {
+    background-color: grey
+}
+
+#clearBoton {
     background-color: lightgrey;
     width: 200px;
     height: 110px;
 }
 
-.clearBoton:hover {
+#clearBoton:hover {
     background-color: rgba(211, 211, 211, 0.567);
+}
+
+#clearBoton:active {
+    background-color: grey
 }
