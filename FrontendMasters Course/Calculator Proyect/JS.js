@@ -1,7 +1,7 @@
 //hecho en la Mac
 
 let Display = document.querySelector(".display").innerHTML
-let operador = ""
+let calculoTotal = ""
 //console.log(Display)
 
 //const oper = Display + 7
@@ -17,15 +17,64 @@ let operador = ""
 
 document.querySelector(".teclado").addEventListener("click", function(event){
     let eventClick = event.target.innerHTML
-    if (isNaN(eventClick)) {
-        Operacion (eventClick,Number(Display))
+    if (eventClick == "=") {
+        document.querySelector(".display").innerHTML = Number(Sorter(calculoTotal))
     } else {
+        if (eventClick == "C") {
+            calculoTotal = ""
+            Display = ""
+            document.querySelector(".display").innerHTML = "0"
+        }
+        else if (eventClick == "←") {
+            console.log()
+        }
+        else if (isNaN(eventClick)) {
+        calculoTotal+= eventClick
+        Display = ""
+    } else  {
         Display += event.target.innerHTML
+        calculoTotal += event.target.innerHTML
         document.querySelector(".display").innerHTML = Number(Display)
-}});
+}}});
 
-function Operacion (string,number) {
+function Sorter (string) {
+    oper = ""
+    PrimerNumero = ""
+    SegundoNumero = ""
+    contador = 0
     console.log(string)
-    console.log(number)
-    let oper = ""
+    for (i = 0; i<string.length;){
+        if (isNaN(string.charAt(i))) {
+            oper +=string.charAt(i)
+            console.log(oper)
+            i++
+            contador++
+        } 
+        else if (contador == 0) {
+            PrimerNumero+= string.charAt(i)
+            i++
+        }
+        else {
+            SegundoNumero+= string.charAt(i)
+            i++
+        }
+    }
+    console.log(Number(PrimerNumero))
+    console.log(Number(SegundoNumero))
+return Calcular (oper,Number(PrimerNumero),Number(SegundoNumero))
+}
+
+function Calcular (string,Number1,Number2) {
+    if(string == "+") {
+        return Number1+Number2
+    }
+    else if(string == "-") {
+        return Number1-Number2
+    }
+    else if(string == "×") {
+        return Number1*Number2
+    }
+    else if(string == "/") {
+        return Number1/Number2
+    }
 }
