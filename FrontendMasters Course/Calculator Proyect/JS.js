@@ -97,3 +97,9 @@ function backArrow (string) {
     }
     return corregido
 }
+
+
+//Primer proyecto hecho en JS
+//Hecho ene FrontendMasters https://btholt.github.io/complete-intro-to-web-dev-v3/lessons/putting-it-all-together/project
+//Cosas a tener en cuenta:
+//Usar más las funciones para subdividir el trabajo
