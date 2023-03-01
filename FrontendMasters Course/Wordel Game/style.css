@@ -7,7 +7,7 @@ hr {
 }
 .container-box {
     display: flex;
-    
+    justify-content: center;
 }
 
 .box {
@@ -20,6 +20,25 @@ hr {
     margin: 4px 4px 0px 4px;
 }
 
-.loader {
-    align-self: center;
+.loader-bar {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0 10px 0;
 }
+
+#loader {
+    font-size: 200%;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}    
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
