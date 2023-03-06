@@ -1,7 +1,7 @@
 window.addEventListener("keydown", display);
 const loader =  document.getElementById("loader")
 contador = 0
-j=-1
+
 
 function hide () {
    loader.style.visibility= "hidden";
@@ -10,8 +10,12 @@ setTimeout("hide()", 2000);
 
 //No entiendo por qué me marca event como depreciated, se puede usar
 
-function CrearListas(lista) {
-
+function CrearListas(lista, numero) {
+    const newlista = []
+    for (i=0;i<5;i++) {        
+        newlista.push(lista[i]);
+    }
+    return newlista
 }
 
 function esLetra() {
@@ -32,7 +36,6 @@ function EnterValidar(number) {
 function BorrarLetra() {
     document.querySelectorAll(".letra")[j].innerHTML = ""
     contador--
-    j--
     console.log(contador)
 
 }
@@ -40,11 +43,12 @@ function BorrarLetra() {
 
 function display() {
     letra = esLetra()
+    lista = CrearListas(document.querySelectorAll(".letra"),contador)
     command = event.key
     if (contador<5 && letra != "" ) {
-        for (i=0;i<contador;i++);contador++;j++; {
+        for (i=0;i<contador;i++);contador++; {
             console.log(letra)
-            document.querySelectorAll(".letra")[j].innerHTML = letra
+            lista[i].innerHTML = letra
         }
     }
     else if (contador == 5 && letra != "") {
