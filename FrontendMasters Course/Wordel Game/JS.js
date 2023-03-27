@@ -1,7 +1,8 @@
-window.addEventListener("keydown", display);
+window.addEventListener("keydown", Intro);
 const loader =  document.getElementById("loader")
-contador = 0
-
+contadorPorLinea = 0
+contadorGlobal = 0
+j=-1
 
 function hide () {
    loader.style.visibility= "hidden";
@@ -10,12 +11,24 @@ setTimeout("hide()", 2000);
 
 //No entiendo por qué me marca event como depreciated, se puede usar
 
-function CrearListas(lista, numero) {
-    const newlista = []
-    for (i=0;i<5;i++) {        
-        newlista.push(lista[i]);
+function Intro() {
+    let NodeList = document.querySelectorAll(".letra");
+    const newArray = Array.from(NodeList);
+    console.log(newArray);
+    const listSize = 5;
+    const listMain = [];
+  
+    for (let i = 0; i < newArray.length; i += listSize) {
+      const listSlice = newArray.slice(i, i + listSize);
+      listMain.push(listSlice);
     }
-    return newlista
+  
+    console.log(listMain);
+  }
+
+function CrearListas(list) {
+
+    
 }
 
 function esLetra() {
@@ -29,34 +42,33 @@ function esLetra() {
 }
 
 function EnterValidar(number) {
-
+    i++
 
 }
 
 function BorrarLetra() {
     document.querySelectorAll(".letra")[j].innerHTML = ""
-    contador--
-    console.log(contador)
+    contadorPorLinea--
+    j--
+    console.log(contadorPorLinea)
 
 }
 
-
 function display() {
     letra = esLetra()
-    lista = CrearListas(document.querySelectorAll(".letra"),contador)
     command = event.key
     if (contador<5 && letra != "" ) {
-        for (i=0;i<contador;i++);contador++; {
+        for (i=0;i<contadorPorLinea;i++);contadorPorLinea++;j++; {
             console.log(letra)
-            lista[i].innerHTML = letra
+            document.querySelectorAll(".letra")[j].innerHTML = letra
         }
     }
-    else if (contador == 5 && letra != "") {
-        console.log(contador)
+    else if (contadorPorLinea == 5 && letra != "") {
+        console.log(contadorPorLinea)
         document.querySelectorAll(".letra")[j].innerHTML = letra
     }
     else if (command == "Enter") {
-        EnterValidar(contador, )
+        EnterValidar(contadorPorLinea, )
     }
     else if (command == "Backspace") {
         BorrarLetra()
