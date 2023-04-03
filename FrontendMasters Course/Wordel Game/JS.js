@@ -27,22 +27,22 @@ function Intro() {
 function Display() {
     letra = esLetra()
     command = event.key
-    if (contadorPorLinea<5 && letra != "" ) {
-        for (j<=contadorPorLinea;;) {
-            console.log("Esto es J",j)
-            console.log("Esto es cont",contadorPorLinea)
-            console.log(letra)
-            listMain[contadorPorLinea][j].innerHTML = letra
+    if (j<5 && letra != "" ) {
+        console.log("Esto es J",j)
+        console.log("Esto es cont",contadorPorLinea)
+        listMain[contadorPorLinea][j].innerHTML = letra
+        if (j <4) {
+            console.log(j)
             j++
-
         }
     }
-    else if (contadorPorLinea == 5 && letra != "") {
-        console.log(contadorPorLinea)
-        document.querySelectorAll(".letra")[j].innerHTML = letra
+    else if (j == 5 && letra != "") {
+        console.log("Esto en contPLinea al final",contadorPorLinea)
+        console.log("Esto en j al final",j)
+        listMain[contadorPorLinea][j].innerHTML = letra
     }
-    else if (command == "Enter") {
-        EnterValidar(contadorPorLinea, )
+    else if (command == "Enter" && j==4) {
+        EnterValidar(contadorPorLinea)
     }
     else if (command == "Backspace") {
         BorrarLetra()
@@ -60,15 +60,17 @@ function esLetra() {
 }
 
 function EnterValidar(number) {
-    i++
-
+    j= 0
+    contadorPorLinea++
+    return 
 }
 
 function BorrarLetra() {
-    document.querySelectorAll(".letra")[j].innerHTML = ""
-    contadorPorLinea--
-    j--
-    console.log(contadorPorLinea)
+    listMain[contadorPorLinea][j].innerHTML = ""
+    if (j>0) {
+        j--
+    }
+    console.log(j)
 
 }
 
