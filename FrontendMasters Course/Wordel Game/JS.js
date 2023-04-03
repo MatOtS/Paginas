@@ -1,40 +1,40 @@
-window.addEventListener("keydown", Intro);
+window.addEventListener("load", Intro);
+window.addEventListener("keydown", Display);
 const loader =  document.getElementById("loader")
 contadorPorLinea = 0
 contadorGlobal = 0
-let i = 0
-let j=0
+const listMain = []
+let j= 0
 
 
 function hide () {
    loader.style.visibility= "hidden";
 }
 setTimeout("hide()", 2000);
-
 //No entiendo por qué me marca event como depreciated, se puede usar
 
 function Intro() {
     let NodeList = document.querySelectorAll(".letra");
     const newArray = Array.from(NodeList);
     const listSize = 5;
-    const listMain = [];
-  
-    for (i < newArray.length; i += listSize;) {
+    for (i=0; i < newArray.length; i += listSize) {
       const listSlice = newArray.slice(i, i + listSize);
-      Display(listSlice)
       listMain.push(listSlice);
     }
+    console.log(listMain)
   }
 
-function Display(list) {
+function Display() {
     letra = esLetra()
     command = event.key
-    console.log(command)
-    console.log(list)
     if (contadorPorLinea<5 && letra != "" ) {
-        for (j<contadorPorLinea;j++;);contadorPorLinea++; {
+        for (j<=contadorPorLinea;;) {
+            console.log("Esto es J",j)
+            console.log("Esto es cont",contadorPorLinea)
             console.log(letra)
-            document.querySelectorAll(".letra")[j].innerHTML = letra
+            listMain[contadorPorLinea][j].innerHTML = letra
+            j++
+
         }
     }
     else if (contadorPorLinea == 5 && letra != "") {
@@ -47,11 +47,6 @@ function Display(list) {
     else if (command == "Backspace") {
         BorrarLetra()
     }
-}
-
-function CrearListas(list) {
-
-    
 }
 
 function esLetra() {
