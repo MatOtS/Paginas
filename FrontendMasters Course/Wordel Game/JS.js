@@ -2,7 +2,9 @@ window.addEventListener("keydown", Intro);
 const loader =  document.getElementById("loader")
 contadorPorLinea = 0
 contadorGlobal = 0
-j=-1
+let i = 0
+let j=0
+
 
 function hide () {
    loader.style.visibility= "hidden";
@@ -14,17 +16,38 @@ setTimeout("hide()", 2000);
 function Intro() {
     let NodeList = document.querySelectorAll(".letra");
     const newArray = Array.from(NodeList);
-    console.log(newArray);
     const listSize = 5;
     const listMain = [];
   
-    for (let i = 0; i < newArray.length; i += listSize) {
+    for (i < newArray.length; i += listSize;) {
       const listSlice = newArray.slice(i, i + listSize);
+      Display(listSlice)
       listMain.push(listSlice);
     }
-  
-    console.log(listMain);
   }
+
+function Display(list) {
+    letra = esLetra()
+    command = event.key
+    console.log(command)
+    console.log(list)
+    if (contadorPorLinea<5 && letra != "" ) {
+        for (j<contadorPorLinea;j++;);contadorPorLinea++; {
+            console.log(letra)
+            document.querySelectorAll(".letra")[j].innerHTML = letra
+        }
+    }
+    else if (contadorPorLinea == 5 && letra != "") {
+        console.log(contadorPorLinea)
+        document.querySelectorAll(".letra")[j].innerHTML = letra
+    }
+    else if (command == "Enter") {
+        EnterValidar(contadorPorLinea, )
+    }
+    else if (command == "Backspace") {
+        BorrarLetra()
+    }
+}
 
 function CrearListas(list) {
 
@@ -54,23 +77,4 @@ function BorrarLetra() {
 
 }
 
-function display() {
-    letra = esLetra()
-    command = event.key
-    if (contador<5 && letra != "" ) {
-        for (i=0;i<contadorPorLinea;i++);contadorPorLinea++;j++; {
-            console.log(letra)
-            document.querySelectorAll(".letra")[j].innerHTML = letra
-        }
-    }
-    else if (contadorPorLinea == 5 && letra != "") {
-        console.log(contadorPorLinea)
-        document.querySelectorAll(".letra")[j].innerHTML = letra
-    }
-    else if (command == "Enter") {
-        EnterValidar(contadorPorLinea, )
-    }
-    else if (command == "Backspace") {
-        BorrarLetra()
-    }
-}
+
