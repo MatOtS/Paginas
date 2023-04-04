@@ -21,27 +21,19 @@ function Intro() {
       const listSlice = newArray.slice(i, i + listSize);
       listMain.push(listSlice);
     }
-    console.log(listMain)
   }
 
 function Display() {
     letra = esLetra()
     command = event.key
-    if (j<5 && letra != "" ) {
-        console.log("Esto es J",j)
-        console.log("Esto es cont",contadorPorLinea)
+    if (letra != "" ) {   
         listMain[contadorPorLinea][j].innerHTML = letra
         if (j <4) {
-            console.log(j)
             j++
+            console.log("Esto es J despues del a suma",j)
         }
     }
-    else if (j == 5 && letra != "") {
-        console.log("Esto en contPLinea al final",contadorPorLinea)
-        console.log("Esto en j al final",j)
-        listMain[contadorPorLinea][j].innerHTML = letra
-    }
-    else if (command == "Enter" && j==4) {
+    else if (command == "Enter" && listMain[contadorPorLinea][j].innerHTML != null) {
         EnterValidar(contadorPorLinea)
     }
     else if (command == "Backspace") {
@@ -66,12 +58,13 @@ function EnterValidar(number) {
 }
 
 function BorrarLetra() {
-    listMain[contadorPorLinea][j].innerHTML = ""
-    if (j>0) {
+    if (j>=1) {
+        listMain[contadorPorLinea][j].innerHTML = ""
         j--
     }
-    console.log(j)
-
+    else if (j == 0) {
+        listMain[contadorPorLinea][j].innerHTML = ""
+    }
 }
 
 
