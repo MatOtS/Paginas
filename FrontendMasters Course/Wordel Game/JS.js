@@ -33,7 +33,8 @@ function Display() {
             console.log("Esto es J despues del a suma",j)
         }
     }
-    else if (command == "Enter" && listMain[contadorPorLinea][j].innerHTML != null) {
+    else if (command == "Enter" && listMain[contadorPorLinea][j].innerHTML != "") {
+        console.log("Enter",listMain[contadorPorLinea][j])
         EnterValidar(contadorPorLinea)
     }
     else if (command == "Backspace") {
@@ -60,9 +61,11 @@ function EnterValidar(number) {
 function BorrarLetra() {
     if (j>=1) {
         listMain[contadorPorLinea][j].innerHTML = ""
+        console.log("Borrado",j)
         j--
     }
-    else if (j == 0) {
+    else if (j == 0 ) {
+        console.log("Borrado con j = 0",j)
         listMain[contadorPorLinea][j].innerHTML = ""
     }
 }
