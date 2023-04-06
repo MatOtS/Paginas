@@ -38,7 +38,15 @@ function Display() {
         EnterValidar(contadorPorLinea)
     }
     else if (command == "Backspace") {
-        BorrarLetra()
+        if (j == 4) {
+            j++
+            console.log(j)
+            BorrarLetra()
+        }
+        else {
+            BorrarLetra()
+        }
+        
     }
 }
 
@@ -60,9 +68,10 @@ function EnterValidar(number) {
 
 function BorrarLetra() {
     if (j>=1) {
-        listMain[contadorPorLinea][j].innerHTML = ""
-        console.log("Borrado",j)
+        listMain[contadorPorLinea][j - 1].innerHTML = ""
         j--
+        console.log("Borrado",j)
+
     }
     else if (j == 0 ) {
         console.log("Borrado con j = 0",j)
