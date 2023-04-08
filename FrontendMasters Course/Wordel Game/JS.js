@@ -2,7 +2,6 @@ window.addEventListener("load", Intro);
 window.addEventListener("keydown", Display);
 const loader =  document.getElementById("loader")
 contadorPorLinea = 0
-contadorGlobal = 0
 const listMain = []
 let j= 0
 
@@ -38,15 +37,15 @@ function Display() {
         EnterValidar(contadorPorLinea)
     }
     else if (command == "Backspace") {
-        if (j == 4) {
+        if (j == 4 && listMain[contadorPorLinea][j].innerHTML != "") {
+            console.log("Entro en el if")
             j++
-            console.log(j)
             BorrarLetra()
         }
         else {
+            console.log("Entro en el else")
             BorrarLetra()
         }
-        
     }
 }
 
@@ -71,7 +70,6 @@ function BorrarLetra() {
         listMain[contadorPorLinea][j - 1].innerHTML = ""
         j--
         console.log("Borrado",j)
-
     }
     else if (j == 0 ) {
         console.log("Borrado con j = 0",j)
