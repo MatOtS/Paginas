@@ -5,7 +5,6 @@ contadorPorLinea = 0
 const listMain = []
 let j= 0
 
-
 function hide () {
    loader.style.visibility= "hidden";
 }
@@ -34,16 +33,21 @@ function Display() {
     }
     else if (command == "Enter" && listMain[contadorPorLinea][j].innerHTML != "") {
         console.log("Enter",listMain[contadorPorLinea][j])
-        EnterValidar(contadorPorLinea)
+        if (ValidWord == true) {
+            EnterValidar(contadorPorLinea)
+            ValidarPalabra()
+        }
+        else {
+            NoEsPalabra()
+        }
+        
     }
     else if (command == "Backspace") {
         if (j == 4 && listMain[contadorPorLinea][j].innerHTML != "") {
-            console.log("Entro en el if")
             j++
             BorrarLetra()
         }
         else {
-            console.log("Entro en el else")
             BorrarLetra()
         }
     }
@@ -69,12 +73,33 @@ function BorrarLetra() {
     if (j>=1) {
         listMain[contadorPorLinea][j - 1].innerHTML = ""
         j--
-        console.log("Borrado",j)
     }
     else if (j == 0 ) {
-        console.log("Borrado con j = 0",j)
         listMain[contadorPorLinea][j].innerHTML = ""
     }
 }
 
+async function GetWordOfDay() {
+    const promise = await fetch("https://words.dev-apis.com/word-of-the-day");
+    const palabra = await promise.json();
+    return palabra
+}
 
+async function ValidWord (word) {
+    const resPost = await fetch("https://words.dev-apis.com/validate-word", {
+        method: "POST",
+        body: JSON.stringify({ word: word }),
+        });
+    const { validWord } = await resPost.json();
+    console.log(validWord)
+    return validWord
+}
+
+function NoEsPalabra () {
+    //aca tengo que borrar lo que se escribió y poner algun marco en rojo 
+    //que inique el error y poner j en 0
+}
+
+function ValidarPalabra() {
+    //Aca tengo que revisar letra por letra y pintar de amarillo, verde o gris según corresponda
+}
