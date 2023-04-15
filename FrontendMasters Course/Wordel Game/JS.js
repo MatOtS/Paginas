@@ -9,7 +9,6 @@ function hide () {
    loader.style.visibility= "hidden";
 }
 setTimeout("hide()", 2000);
-//No entiendo por qué me marca event como depreciated, se puede usar
 
 function Intro() {
     let NodeList = document.querySelectorAll(".letra");
@@ -21,23 +20,25 @@ function Intro() {
     }
   }
 
-function Display() {
+async function Display() {
     letra = esLetra()
     command = event.key
     if (letra != "" ) {   
         listMain[contadorPorLinea][j].innerHTML = letra
         if (j <4) {
             j++
-            console.log("Esto es J despues del a suma",j)
         }
     }
     else if (command == "Enter" && listMain[contadorPorLinea][j].innerHTML != "") {
-        console.log("Enter",listMain[contadorPorLinea][j])
-        if (ValidWord == true) {
+        palabra = AppendPalabra()
+        console.log(palabra)
+        if (await ValidWord(palabra) === true) {
+            console.log("Es palabra")
             EnterValidar(contadorPorLinea)
             ValidarPalabra()
         }
         else {
+            console.log("No es palabra")
             NoEsPalabra()
         }
         
@@ -51,6 +52,15 @@ function Display() {
             BorrarLetra()
         }
     }
+}
+
+function AppendPalabra() {
+    pal = ""
+    for (k=0;k<=j;) {
+        pal = pal.concat(listMain[contadorPorLinea][k].innerHTML)
+        k++
+    }
+    return pal
 }
 
 function esLetra() {
@@ -81,8 +91,8 @@ function BorrarLetra() {
 
 async function GetWordOfDay() {
     const promise = await fetch("https://words.dev-apis.com/word-of-the-day");
-    const palabra = await promise.json();
-    return palabra
+    const palabraDia = await promise.json();
+    return palabraDia
 }
 
 async function ValidWord (word) {
@@ -98,6 +108,22 @@ async function ValidWord (word) {
 function NoEsPalabra () {
     //aca tengo que borrar lo que se escribió y poner algun marco en rojo 
     //que inique el error y poner j en 0
+    for (;j>=0;) {
+        listMain[contadorPorLinea][j].innerHTML = ""
+        j--
+    }
+    j = 0
+    console.log(j)
+    coleccion = document.getElementsByClassName("container-box")
+    linea = coleccion[contadorPorLinea]
+    for (k=0;k<linea.children.length;){
+        linea.children[k].style.borderColor = "red";
+        
+        setTimeout(function() {
+            linea.children[k].borderColor = "";
+        }, 1000);
+        k++
+    }
 }
 
 function ValidarPalabra() {
