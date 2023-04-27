@@ -17,6 +17,7 @@ hr {
 .box {
     display: flex;
     border-color: rgb(132, 132, 132);
+    transition: border-color 0.3s;
     justify-content: center;
     width: 50px;
     margin: 4px 4px 0px 4px;

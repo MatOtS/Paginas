@@ -4,6 +4,8 @@ const loader =  document.getElementById("loader")
 contadorPorLinea = 0
 const listMain = []
 let j= 0
+coleccion = document.getElementsByClassName("container-box")
+linea = []
 
 function hide () {
    loader.style.visibility= "hidden";
@@ -29,11 +31,12 @@ async function Display() {
             j++
         }
     }
+    
     else if (command == "Enter" && listMain[contadorPorLinea][j].innerHTML != "") {
         palabra = AppendPalabra()
-        console.log(palabra)
         if (await ValidWord(palabra) === true) {
             console.log("Es palabra")
+            console.log(contadorPorLinea)
             EnterValidar(contadorPorLinea)
             ValidarPalabra()
         }
@@ -101,7 +104,6 @@ async function ValidWord (word) {
         body: JSON.stringify({ word: word }),
         });
     const { validWord } = await resPost.json();
-    console.log(validWord)
     return validWord
 }
 
@@ -113,18 +115,51 @@ function NoEsPalabra () {
         j--
     }
     j = 0
-    console.log(j)
-    coleccion = document.getElementsByClassName("container-box")
-    linea = coleccion[contadorPorLinea]
-    for (k=0;k<linea.children.length;){
-        linea.children[k].style.borderColor = "red";
-        setTimeout(function() {
-            linea.children[k].borderColor = "black";
-        }, 1000);
+    for (k=0;k<coleccion[contadorPorLinea].children.length;){
+        linea.push(coleccion[contadorPorLinea].children[k])
         k++
     }
+    linea.forEach(function(element){
+        element.style.borderColor = "red";
+    });
+    setTimeout(function(){
+        linea.forEach(function(element){
+            element.style.borderColor = "black";
+        });
+    },1000)
 }
 
-function ValidarPalabra() {
+async function ValidarPalabra() {
     //Aca tengo que revisar letra por letra y pintar de amarillo, verde o gris según corresponda
+    palabraDia = await GetWordOfDay()
+    console.log(palabra)
+    console.log(palabraDia)
+    for (i= 0;i<5;) {
+        if (palabra[i] == palabraDia.word[i]) {
+            console.log("Verde")
+            console.log(palabra[i])
+            console.log()
+        }
+        else if (palabraDia.word.includes(palabra[i])) {
+            console.log("Amarillo")
+            console.log(palabra[i])
+        }
+        else {
+            console.log("Gris")
+            console.log(palabra[i])
+        }
+    i++
+    }
+    
+}
+
+function CambiarColor(color) {
+    linea.forEach(function(element){
+        element.style.borderColor = "red";
+    });
+    setTimeout(function(){
+        linea.forEach(function(element){
+            element.style.borderColor = "black";
+        });
+    },1000)
 }
