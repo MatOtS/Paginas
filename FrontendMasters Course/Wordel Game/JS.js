@@ -107,7 +107,7 @@ async function ValidWord (word) {
 
 function NoEsPalabra () {
     //aca tengo que borrar lo que se escribió y poner algun marco en rojo 
-    //que inique el error y poner j en 0
+    //que inique el error y poner j en 0 y que el marco vuelva al color original
     for (;j>=0;) {
         listMain[contadorPorLinea][j].innerHTML = ""
         j--
@@ -118,9 +118,8 @@ function NoEsPalabra () {
     linea = coleccion[contadorPorLinea]
     for (k=0;k<linea.children.length;){
         linea.children[k].style.borderColor = "red";
-        
         setTimeout(function() {
-            linea.children[k].borderColor = "";
+            linea.children[k].borderColor = "black";
         }, 1000);
         k++
     }
