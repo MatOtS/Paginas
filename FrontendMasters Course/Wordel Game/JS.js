@@ -31,14 +31,17 @@ async function Display() {
             j++
         }
     }
-    
     else if (command == "Enter" && listMain[contadorPorLinea][j].innerHTML != "") {
         palabra = AppendPalabra()
+        for (k=0;k<coleccion[contadorPorLinea].children.length;){
+            linea.push(coleccion[contadorPorLinea].children[k])
+            k++
+        }
         if (await ValidWord(palabra) === true) {
             console.log("Es palabra")
             console.log(contadorPorLinea)
+            await ValidarPalabra()
             EnterValidar(contadorPorLinea)
-            ValidarPalabra()
         }
         else {
             console.log("No es palabra")
@@ -115,18 +118,7 @@ function NoEsPalabra () {
         j--
     }
     j = 0
-    for (k=0;k<coleccion[contadorPorLinea].children.length;){
-        linea.push(coleccion[contadorPorLinea].children[k])
-        k++
-    }
-    linea.forEach(function(element){
-        element.style.borderColor = "red";
-    });
-    setTimeout(function(){
-        linea.forEach(function(element){
-            element.style.borderColor = "black";
-        });
-    },1000)
+    CambiarColor("red")
 }
 
 async function ValidarPalabra() {
@@ -134,32 +126,51 @@ async function ValidarPalabra() {
     palabraDia = await GetWordOfDay()
     console.log(palabra)
     console.log(palabraDia)
+    console.log(contadorPorLinea)
     for (i= 0;i<5;) {
         if (palabra[i] == palabraDia.word[i]) {
-            console.log("Verde")
-            console.log(palabra[i])
-            console.log()
+            CambiarColor("green")
         }
         else if (palabraDia.word.includes(palabra[i])) {
-            console.log("Amarillo")
-            console.log(palabra[i])
+            CambiarColor("yellow")
         }
         else {
-            console.log("Gris")
-            console.log(palabra[i])
+            CambiarColor("grey")
         }
     i++
-    }
-    
+    }  
 }
 
 function CambiarColor(color) {
-    linea.forEach(function(element){
-        element.style.borderColor = "red";
-    });
-    setTimeout(function(){
+    console.log(color)
+    if (color == "red"){
         linea.forEach(function(element){
-            element.style.borderColor = "black";
+            element.style.borderColor = "red";
         });
-    },1000)
+        setTimeout(function(){
+            linea.forEach(function(element){
+                element.style.borderColor = "black";
+            });
+        },1000)
+    }
+    else if (color == "green"){
+        console.log(color)
+        linea.forEach(function(element){
+            element.style.borderColor = "green";
+        });
+    }
+    else if (color == "yellow"){
+        console.log(color)
+        linea.forEach(function(element){
+            element.style.borderColor = "yellow";
+        });
+    }
+    else {
+        console.log(color)
+        linea.forEach(function(element){
+            element.style.borderColor = "grey";
+        });
+    }
+    setTimeout(function(){
+        linea= [];},1500)
 }
