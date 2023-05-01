@@ -118,7 +118,7 @@ function NoEsPalabra () {
         j--
     }
     j = 0
-    CambiarColor("red")
+    CambiarColor("red",-1)
 }
 
 async function ValidarPalabra() {
@@ -126,24 +126,31 @@ async function ValidarPalabra() {
     palabraDia = await GetWordOfDay()
     console.log(palabra)
     console.log(palabraDia)
-    console.log(contadorPorLinea)
     for (i= 0;i<5;) {
         if (palabra[i] == palabraDia.word[i]) {
-            CambiarColor("green")
+            CambiarColor("green",i)
         }
         else if (palabraDia.word.includes(palabra[i])) {
-            CambiarColor("yellow")
+            contadorMismaLetra = 0
+            for (p=0;p<palabraDia.word.length;) {
+                if (palabraDia.word[p] == palabra[i])
+                contadorMismaLetra++
+                console.log("Contador misma letra",palabra[i],contadorMismaLetra)
+            p++
+            }
+            CambiarColor("yellow",i)
         }
         else {
-            CambiarColor("grey")
+            CambiarColor("grey",i)
         }
     i++
     }  
 }
 
-function CambiarColor(color) {
+function CambiarColor(color,number) {
     console.log(color)
     if (color == "red"){
+        console.log("error")
         linea.forEach(function(element){
             element.style.borderColor = "red";
         });
@@ -154,22 +161,18 @@ function CambiarColor(color) {
         },1000)
     }
     else if (color == "green"){
-        console.log(color)
-        linea.forEach(function(element){
-            element.style.borderColor = "green";
-        });
+        console.log("test",color,i)
+        linea[number].style.borderColor = "#ccc";
+        linea[number].style.backgroundColor = "green";
     }
     else if (color == "yellow"){
         console.log(color)
-        linea.forEach(function(element){
-            element.style.borderColor = "yellow";
-        });
+        linea[number].style.borderColor = "#ccc";
+        linea[number].style.backgroundColor = "yellow";
     }
     else {
-        console.log(color)
-        linea.forEach(function(element){
-            element.style.borderColor = "grey";
-        });
+        linea[number].style.borderColor = "#ccc";
+        linea[number].style.backgroundColor = "grey";
     }
     setTimeout(function(){
         linea= [];},1500)
