@@ -126,20 +126,17 @@ async function ValidarPalabra() {
     palabraDia = await GetWordOfDay()
     console.log(palabra)
     console.log(palabraDia)
+    build = ""
     for (i= 0;i<5;) {
         if (palabra[i] == palabraDia.word[i]) {
             CambiarColor("green",i)
+            build+= palabra[i]
         }
-        else if (palabraDia.word.includes(palabra[i])) {
-            contadorMismaLetra = 0
-            for (p=0;p<palabraDia.word.length;) {
-                if (palabraDia.word[p] == palabra[i])
-                contadorMismaLetra++
-                console.log("Contador misma letra",palabra[i],contadorMismaLetra)
-            p++
-            }
+        else if (palabraDia.word.includes(palabra[i]) === true && build.includes(palabra[i]) === false) {
+            console.log("entro")
             CambiarColor("yellow",i)
         }
+        
         else {
             CambiarColor("grey",i)
         }
@@ -148,7 +145,6 @@ async function ValidarPalabra() {
 }
 
 function CambiarColor(color,number) {
-    console.log(color)
     if (color == "red"){
         console.log("error")
         linea.forEach(function(element){
@@ -161,12 +157,10 @@ function CambiarColor(color,number) {
         },1000)
     }
     else if (color == "green"){
-        console.log("test",color,i)
         linea[number].style.borderColor = "#ccc";
         linea[number].style.backgroundColor = "green";
     }
     else if (color == "yellow"){
-        console.log(color)
         linea[number].style.borderColor = "#ccc";
         linea[number].style.backgroundColor = "yellow";
     }
