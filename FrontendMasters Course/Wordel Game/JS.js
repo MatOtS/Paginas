@@ -96,7 +96,7 @@ function BorrarLetra() {
 }
 
 async function GetWordOfDay() {
-    const promise = await fetch("https://words.dev-apis.com/word-of-the-day");
+    const promise = await fetch("https://words.dev-apis.com/word-of-the-day?puzzle=2");
     const palabraDia = await promise.json();
     return palabraDia
 }
@@ -126,14 +126,29 @@ async function ValidarPalabra() {
     palabraDia = await GetWordOfDay()
     console.log(palabra)
     console.log(palabraDia)
-    build = ""
     for (i= 0;i<5;) {
         if (palabra[i] == palabraDia.word[i]) {
             CambiarColor("green",i)
-            build+= palabra[i]
         }
-        else if (palabraDia.word.includes(palabra[i]) === true && build.includes(palabra[i]) === false) {
+        else if (palabraDia.word.includes(palabra[i]) === true) {
             console.log("entro")
+            var contadorletra = 0
+            var letrarepetida = 0
+            for (k=0;k<5;) {
+                if (palabra[k] == palabra[i]) {
+                    letrarepetida+=1
+                    console.log(palabra[k])
+                    console.log("letrarepetida",letrarepetida)
+                }
+            k++
+            }
+            for (p=0;p<5;) {
+                if (palabraDia.word[p] == palabra[i]) {
+                    contadorletra+=1
+                    console.log("contadorLetra",contadorletra)
+                }
+            p++
+            }
             CambiarColor("yellow",i)
         }
         
