@@ -41,6 +41,10 @@ async function Display() {
             console.log("Es palabra")
             console.log(contadorPorLinea)
             await ValidarPalabra()
+            if (palabra == palabraDia.word) {
+                console.log("Correcto")
+                
+            }
             EnterValidar(contadorPorLinea)
         }
         else {
@@ -96,7 +100,7 @@ function BorrarLetra() {
 }
 
 async function GetWordOfDay() {
-    const promise = await fetch("https://words.dev-apis.com/word-of-the-day?puzzle=2");
+    const promise = await fetch("https://words.dev-apis.com/word-of-the-day?puzzle=2000");
     const palabraDia = await promise.json();
     return palabraDia
 }
@@ -127,31 +131,41 @@ async function ValidarPalabra() {
     console.log(palabra)
     console.log(palabraDia)
     for (i= 0;i<5;) {
-        if (palabra[i] == palabraDia.word[i]) {
-            CambiarColor("green",i)
-        }
-        else if (palabraDia.word.includes(palabra[i]) === true) {
+        if (palabraDia.word.includes(palabra[i]) === true) {
             console.log("entro")
             var contadorletra = 0
             var letrarepetida = 0
             for (k=0;k<5;) {
                 if (palabra[k] == palabra[i]) {
                     letrarepetida+=1
-                    console.log(palabra[k])
-                    console.log("letrarepetida",letrarepetida)
+                    console.log("letrarepetida",letrarepetida,palabra[k])
                 }
             k++
             }
             for (p=0;p<5;) {
                 if (palabraDia.word[p] == palabra[i]) {
                     contadorletra+=1
-                    console.log("contadorLetra",contadorletra)
+                    console.log("contadorLetra",contadorletra,palabraDia.word[p])
                 }
             p++
             }
-            CambiarColor("yellow",i)
+            if (letrarepetida <= contadorletra) {
+                if (palabra[i] == palabraDia.word[i]) {
+                    CambiarColor("green",i)
+                }
+                else {
+                    CambiarColor("yellow",i)
+                }
+            }
+            else {
+                if (palabra[i] == palabraDia.word[i]) {
+                    CambiarColor("green",i)
+                }
+                else {
+                    CambiarColor("grey",i)
+                }
+            }
         }
-        
         else {
             CambiarColor("grey",i)
         }
