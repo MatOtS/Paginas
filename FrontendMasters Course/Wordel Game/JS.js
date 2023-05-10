@@ -43,7 +43,7 @@ async function Display() {
             await ValidarPalabra()
             if (palabra == palabraDia.word) {
                 console.log("Correcto")
-                
+                return window.removeEventListener("keydown", Display);
             }
             EnterValidar(contadorPorLinea)
         }
