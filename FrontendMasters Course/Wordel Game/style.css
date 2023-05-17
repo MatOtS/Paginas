@@ -56,3 +56,47 @@ hr {
     height: 45px;
     justify-content: center;
   }
+
+#message {
+    visibility: hidden;
+    font-size: 50px;
+    text-align: center;
+    animation: color 1s infinite;
+}
+
+@keyframes color {
+    from {
+        color: #6666ff;
+      }
+      10% {
+        color: #0099ff;
+      }
+      50% {
+        color: #00ff00;
+      }
+      75% {
+        color: #ff3399;
+      }
+      100% {
+        color: #6666ff;
+      }
+}
+
+#message2 {
+    visibility: hidden;
+    font-size: 50px;
+    text-align: center;
+    animation: color 1s infinite;
+}
+
+@keyframes color {
+    from {
+        color: #fc0202;
+      }
+      50% {
+        color: #b9140b;
+      }
+      100% {
+        color: #e31414;
+      }
+}

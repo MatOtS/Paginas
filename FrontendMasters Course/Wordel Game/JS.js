@@ -1,6 +1,8 @@
 window.addEventListener("load", Intro);
 window.addEventListener("keydown", Display);
 const loader =  document.getElementById("loader")
+const winnerText = document.getElementById("message")
+const gameOver = document.getElementById("message2")
 contadorPorLinea = 0
 const listMain = []
 let j= 0
@@ -43,7 +45,10 @@ async function Display() {
             await ValidarPalabra()
             if (palabra == palabraDia.word) {
                 console.log("Correcto")
+                console.log(winnerText)
+                winnerText.style.visibility = "visible";
                 return window.removeEventListener("keydown", Display);
+                
             }
             EnterValidar(contadorPorLinea)
         }
@@ -61,6 +66,10 @@ async function Display() {
         else {
             BorrarLetra()
         }
+    }
+    if (contadorPorLinea == 6 ) {
+        gameOver.style.visibility = "visible";
+        window.removeEventListener("keydown", Display);
     }
 }
 
