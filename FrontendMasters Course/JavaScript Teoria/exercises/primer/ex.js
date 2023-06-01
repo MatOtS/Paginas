@@ -11,3 +11,18 @@ addFavoriteBook("Great Expectations");
 addFavoriteBook("You Don't Know JS");
 
 // TODO: print out favorite books
+
+
+function addFavoriteBook(string) {
+    if (string.includes("Great" == false)) {
+        favoriteBooks.push(string)
+    }
+}
+
+function printFavoriteBooks() {
+    for (i=0;i<favoriteBooks.length;) {
+        console.log("Favorites Bookes: ",i+1,".",favoriteBooks[i])
+    }
+}
+
+printFavoriteBooks()
