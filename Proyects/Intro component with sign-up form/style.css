@@ -20,32 +20,52 @@ body {
 }
 .form-banner-container {
     grid-area: 1 / 2 / 2 / 3;
-    padding: 35% 0 10% 10%;
+    padding: 35% 0% 10% 0%;
+    right: 7%;
     position: relative;
     width: 50%;
-    height: 40vh;
 }
 .form {
     background-color: white;
     border-radius: 10px;
+    margin-top: 5%;
+    width: 130%;
+    height: 40vh;
 }
 .main-text {
     grid-area: 1 / 1 / 2 / 2;
     width: 80%;
-    padding: 35% 0 10% 20%;
+    padding: 40% 0 10% 30%;
 }
 h1 {
     margin-bottom: 20px;
     font-weight: 700;
-    font-size: 50px;
-    width: 90%;
-    line-height: 55px;
+    font-size: 60px;
+    width: 100%;
+    line-height: 65px;
 }
 .main-text p {
     font-size: 16px;
     font-weight: 400;
-    width: 90%;
+    width: 70%;
 }
 .freeTrial-banner {
     display: flex;
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    background-color: hsl(248, 32%, 49%);
+    border-radius: 10px;
+    box-shadow: 0px 8px hsla(249, 10%, 26%, 0.356);
+}
+.freeTrial-banner p {
+    font-weight: 700;
+    font-size: 14px;
+}
+.no-bold {
+    font-weight: 400 !important;
+}
+
+.terms {
+    color: rgb(164, 164, 164);
+    font-weight: 500;
 }
