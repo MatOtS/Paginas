@@ -87,7 +87,7 @@ h1 {
     width: 85%;
     border-radius: 5px;
     padding: 15px 0px 15px 20px;
-    margin: 0px 0px 15px 40px;
+    margin: 5% 0px 15px 40px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -116,7 +116,6 @@ h1 {
     color: rgb(81, 24, 4);
 }
 .error {
-    visibility: hidden;
     background-image: url(images/icon-error.svg);
     background-position: 360px 12px;
     background-repeat: no-repeat;
@@ -195,7 +194,7 @@ h1 {
         width: 90%;
     }
     .submit {
-        margin: 0 0 0 8%;
+        margin: 5% 0 0 8%;
     }
     .terms {
         padding: 0 0 0 14%;
