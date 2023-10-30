@@ -139,7 +139,6 @@ h1 {
 @media screen and (max-width:375px) {
     .background-container {
         height: 135vh;
-        /* width: max-content; */
     }
     .master-containter {
         max-width: 100%;
@@ -169,10 +168,73 @@ h1 {
         flex-flow: column;
     }
     .freeTrial-banner {
-        width: 45vh;
+        width: 43vh;
         height: 90px;
         display: flex;   
-        margin: 0 0% 0 35px;
+        margin: 0 0% 0 17px;
+    }
+    .freeTrial-banner p {
+        width: 80%;
+        text-align: center;
+    }
+    .form {
+        margin-top: 15%;
+        width: 335px;
+        height: 67vh;
+        overflow: hidden;
+        margin: 25px 0px 0px 21px;
+    }
+    .input-container {
+        margin: 15px 15px 0px 0px;
+    }
+    .input {
+        margin: 10px 0px 0px 25px;
+        padding: 15px 0px 15px 20px;
+        width: 90%;
+    }
+    .submit {
+        margin: 5% 0 0 8%;
+    }
+    .terms {
+        padding: 0 0 0 14%;
+        margin-top: 15px;
+        width: 75%;
+        text-align: center;
+        line-height: 15px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:376px) and (max-width:1500px) {
+    .master-containter {
+        max-width: 100%;
+        height: 60vh;
+    }
+    .main-text {
+        width: 100%;
+        padding: 40% 0 0% 19%;
+    }
+    .main-text h1 {
+        font-size: 33px;
+        line-height: 30px
+    }
+    .main-text p {
+        position: relative;
+        right: 30px;
+        font-size: 18px;
+        width: 110%;
+        text-align: center;
+    }
+    .form-banner-container {
+        padding: 10% 0% 0% 0%;
+        display: flex;
+        flex-flow: column;
+    }
+    .freeTrial-banner {
+        width: 43vh;
+        height: 90px;
+        display: flex;   
+        margin: 0 0% 0 17px;
     }
     .freeTrial-banner p {
         width: 80%;
