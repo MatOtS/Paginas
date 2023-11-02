@@ -12,13 +12,6 @@ document.querySelector(".submit").addEventListener("click", function Submit() {
     Checker(pw,3)
 })
 
-function EnterButton() {
-    command = event.key
-    if (command == "Enter") {
-        console.log("Enter")
-    }
-}
-
 function Checker(string,number) {
     if (string.length === 0) {
         mensajeRojo[number].style.visibility = "visible";
