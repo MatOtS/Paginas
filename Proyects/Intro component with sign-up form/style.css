@@ -48,6 +48,7 @@ body {
     box-sizing: border-box;
     font-weight: 700;
     font-family: Poppins;
+    transition-duration: 1s;
 }
 .main-text {
     grid-area: 1 / 1 / 2 / 2;

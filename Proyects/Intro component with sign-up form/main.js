@@ -1,10 +1,9 @@
 const mensajeRojo = document.getElementsByClassName("error-mnj")
-window.addEventListener("keydown", EnterButton)
 document.querySelector(".submit").addEventListener("click", function Submit() {
-    const name = document.getElementsByName("name")[0].value
-    const lastName = document.getElementsByName("lastname")[0].value
-    const email = document.getElementsByName("email")[0].value
-    const pw = document.getElementsByName("pw")[0].value
+    const name = document.getElementsByName("name")
+    const lastName = document.getElementsByName("lastname")
+    const email = document.getElementsByName("email")
+    const pw = document.getElementsByName("pw")
 
     Checker(name,0)
     Checker(lastName,1)
@@ -12,9 +11,18 @@ document.querySelector(".submit").addEventListener("click", function Submit() {
     Checker(pw,3)
 })
 
+
 function Checker(string,number) {
-    if (string.length === 0) {
+    console.log(string)
+    valor = string[0].value
+    if (valor.length === 0) {
         mensajeRojo[number].style.visibility = "visible";
+        string[0].style.borderColor = "red";
+
+        setTimeout(function(){
+            string[0].style.borderColor = "black";
+        },3000)
+        
     }
     else {
         mensajeRojo[number].style.visibility = "hidden";
@@ -22,8 +30,14 @@ function Checker(string,number) {
 }
 
 function CheckerEmail(string,number) {
-    if (string.length === 0 || !(string.includes("@"))) {
+    valor = string[0].value
+    console.log(string)
+    if (valor.length === 0 || !(string.includes("@"))) {
         mensajeRojo[number].style.visibility = "visible";
+        string[0].style.borderColor = "red";
+        setTimeout(function(){
+            string[0].style.borderColor = "black";
+        },3000)
     }
     else {
         mensajeRojo[number].style.visibility = "hidden";
