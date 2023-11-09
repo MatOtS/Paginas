@@ -6,7 +6,7 @@ body {
     background-color:midnightblue
 }
 .boton {
-    color: white;
+    color: black !important;
     background-color:snow;
     width: 85%;
     border-radius: 5px;
@@ -17,7 +17,8 @@ body {
     box-sizing: border-box;
     font-weight: 500;
     font-size: 16px;
-    cursor:pointer
+    cursor:pointer;
+    text-align: center;
 }
 a:link {
     text-decoration: none;
