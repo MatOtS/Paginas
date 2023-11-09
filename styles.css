@@ -30,3 +30,8 @@ a:active {
   cursor: pointer;
   color: black;
 }
+a:-webkit-any-link {
+    color:unset;
+    cursor: unset;
+    text-decoration: unset;
+}
