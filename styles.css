@@ -16,7 +16,8 @@ body {
     border: 1px solid #ccc;
     box-sizing: border-box;
     font-weight:bold;
-    font-size: 16px;
+    font-size: 16px !important;
+    font-family: sans-serif;
     cursor:pointer;
     text-align: center;
 }
