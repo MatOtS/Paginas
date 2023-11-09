@@ -7,8 +7,7 @@ body {
 }
 .boton {
     color: white;
-    background-color:  hsl(154, 59%, 51%);
-    font-family: Poppins;
+    background-color:snow;
     width: 85%;
     border-radius: 5px;
     padding: 15px 0px 15px 20px;
@@ -19,4 +18,7 @@ body {
     font-weight: 500;
     font-size: 16px;
     cursor:pointer
+}
+a:link {
+    text-decoration: none;
 }
