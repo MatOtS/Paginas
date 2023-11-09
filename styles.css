@@ -8,14 +8,14 @@ body {
 .boton {
     color: black !important;
     background-color:snow;
-    width: 85%;
+    width: 15%;
     border-radius: 5px;
-    padding: 15px 0px 15px 20px;
+    padding: 15px 0px 15px 0px;
     margin: 5% 0px 15px 40px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    font-weight: 500;
+    font-weight:bold;
     font-size: 16px;
     cursor:pointer;
     text-align: center;
