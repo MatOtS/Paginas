@@ -20,6 +20,6 @@ body {
     cursor:pointer;
     text-align: center;
 }
-a:link {
+a {
     text-decoration: none;
 }
