@@ -332,7 +332,7 @@ h1 {
         margin: 0 15px 0 0;
     }
     .freeTrial-banner {
-        width: 76vh;
+        width: 160%;
         height: 80px;
         display: flex;   
         margin: 0 0% 0 45px;
@@ -370,4 +370,8 @@ h1 {
     .error-mnj {
         left: 68%;
     }
+}
+
+@media screen and (min-width:799px) and (max-width:1500px) and (max-height:800px) {
+
 }
