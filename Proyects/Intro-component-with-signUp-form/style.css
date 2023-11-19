@@ -276,4 +276,8 @@ h1 {
         line-height: 15px;
         font-size: 12px;
     }
+    .error-mnj {
+        left: 52%;
+        top: 6px;
+    }
 }
