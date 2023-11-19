@@ -3,7 +3,7 @@
     padding: 0;
 }
 body {
-    background-color:midnightblue
+    background-blend-mode: soft-light;
 }
 .boton {
     color: black !important;
