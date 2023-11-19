@@ -237,10 +237,10 @@ h1 {
         margin: 0 15px 0 0;
     }
     .freeTrial-banner {
-        width: 43vh;
-        height: 90px;
+        width: 45vh;
+        height: 80px;
         display: flex;   
-        margin: 0 0% 0 17px;
+        margin: 0 0% 0 16px;
     }
     .freeTrial-banner p {
         width: 80%;
