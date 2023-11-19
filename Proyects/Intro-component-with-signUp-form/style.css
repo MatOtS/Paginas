@@ -220,11 +220,11 @@ h1 {
         line-height: 38px;
         width: 110%;
         position: relative;
-        right: 11px;
+        right: 6px;
     }
     .main-text p {
         position: relative;
-        right: 30px;
+        right: 17px;
         font-size: 20px;
         width: 110%;
         text-align: center;
@@ -234,6 +234,7 @@ h1 {
         padding: 10% 0% 0% 0%;
         display: flex;
         flex-flow: column;
+        margin: 0 15px 0 0;
     }
     .freeTrial-banner {
         width: 43vh;
