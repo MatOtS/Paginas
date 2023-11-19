@@ -332,10 +332,10 @@ h1 {
         margin: 0 15px 0 0;
     }
     .freeTrial-banner {
-        width: 86vh;
+        width: 76vh;
         height: 80px;
         display: flex;   
-        margin: 0 0% 0 27px;
+        margin: 0 0% 0 45px;
     }
     .freeTrial-banner p {
         width: 80%;
@@ -343,10 +343,10 @@ h1 {
     }
     .form {
         margin-top: 15%;
-        width: 180%;
+        width: 160%;
         height: 60vh;
         overflow: hidden;
-        margin: 25px 0px 0px 29px;
+        margin: 25px 0px 0px 46px;
     }
     .input-container {
         margin: 15px 15px 0px 0px;
