@@ -127,7 +127,7 @@ h1 {
     color: red;
     position: relative;
     left: 63%;
-    top: 10px;
+    top: 2px;
     font-size: 10px;
 }
 
@@ -209,7 +209,6 @@ h1 {
     }
     .error-mnj {
         left: 68%;
-        top: 2px;
     }
 }
 
