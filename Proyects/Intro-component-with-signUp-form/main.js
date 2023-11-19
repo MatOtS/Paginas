@@ -33,7 +33,7 @@ function Checker(string,number) {
 function CheckerEmail(string,number) {
     valor = string[0].value
     console.log(string)
-    if (valor.length === 0 && !(string.includes("@"))) {
+    if (valor.length === 0 || !(string.includes("@"))) {
         mensajeRojo[number].style.visibility = "visible";
         string[0].style.borderColor = "red";
         setTimeout(function(){
