@@ -219,13 +219,13 @@ h1 {
     }
 }
 
-@media screen and (max-width: 375px){
+@media screen and (min-width:321px) and (max-width: 375px){
     .error-mnj {
         left: 54%;
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 376px) and (max-width: 768px){
     .error-mnj {
         left: 59%;
     }
