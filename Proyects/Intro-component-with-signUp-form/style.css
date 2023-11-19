@@ -304,3 +304,72 @@ h1 {
         left: 54%;
     }
 }
+
+@media screen and (min-width:600px) and (max-width:1500px) and (max-height:800px)  {
+    .master-containter {
+        max-width: 100%;
+        height: 60vh;
+        padding-top: 14%;
+    }
+    .main-text {
+        width: 100%;
+        padding: 40% 0 0% 15%;
+    }
+    .main-text h1 {
+        font-size: 41px;
+        line-height: 43px;
+        width: 110%;
+        position: relative;
+        right: 12px;
+    }
+    .main-text p {
+        position: relative;
+        right: 17px;
+        font-size: 20px;
+        width: 110%;
+        text-align: center;
+        padding-top: 8px;
+    }
+    .form-banner-container {
+        padding: 10% 0% 0% 0%;
+        display: flex;
+        flex-flow: column;
+        margin: 0 15px 0 0;
+    }
+    .freeTrial-banner {
+        width: 45vh;
+        height: 80px;
+        display: flex;   
+        margin: 0 0% 0 16px;
+    }
+    .freeTrial-banner p {
+        width: 80%;
+        text-align: center;
+    }
+    .form {
+        margin-top: 15%;
+        width: 180%;
+        height: 60vh;
+        overflow: hidden;
+        margin: 25px 0px 0px 29px;
+    }
+    .input-container {
+        margin: 15px 15px 0px 0px;
+    }
+    .input {
+        margin: 10px 0px 0px 25px;
+        padding: 15px 0px 15px 20px;
+        width: 90%;
+    }
+    .submit {
+        margin: 5% 0 0 8%;
+    }
+    .terms {
+        padding: 0 0 0 14%;
+        margin-top: 15px;
+        width: 75%;
+        text-align: center;
+        line-height: 15px;
+        font-size: 12px;
+    }
+}
