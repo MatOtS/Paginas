@@ -152,14 +152,14 @@ h1 {
         padding: 16% 0 0% 10%;
     }
     .main-text h1 {
-        font-size: 50px;
+        font-size: 37px;
         line-height: 47px;
-        margin-left: 32px;
+        margin-left: 2px;
     }
     .main-text p {
         position: relative;
-        right: 24px;
-        font-size: 23px;
+        right: 20px;
+        font-size: 18px;
         width: 110%;
         text-align: center;
     }
@@ -171,22 +171,22 @@ h1 {
         max-width: 100%;
     }
     .freeTrial-banner {
-        width: 94%;
+        width: 92%;
         height: 90px;
         display: flex;   
-        margin: 0 0% 0 17px;
+        margin: 0 0% 0 15px;
     }
     .freeTrial-banner p {
         width: 80%;
         text-align: center;
-        font-size: 21px;
+        font-size: 19px;
     }
     .form {
         margin-top: 15%;
-        width: 94%;
+        width: 93%;
         height: 50vh;
         overflow: hidden;
-        margin: 25px 0px 0px 21px;
+        margin: 25px 0px 0px 14px;
     }
     .input-container {
         margin: 15px 15px 0px 0px;
@@ -200,7 +200,7 @@ h1 {
         margin: 5% 0 0 8%;
     }
     .terms {
-        padding: 0 0 0 14%;
+        padding: 0 0 0 11%;
         margin-top: 15px;
         width: 75%;
         text-align: center;
