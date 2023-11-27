@@ -16,13 +16,15 @@ function Checker(string,number) {
     console.log(string)
     valor = string[0].value
     if (valor.length === 0) {
+        setTimeout(function(){
         mensajeRojo[number].style.visibility = "visible";
         string[0].style.borderColor = "red";
+         },970)
 
         setTimeout(function(){
             string[0].style.borderColor = "black";
 
-        },3000)
+        },4000)
         
     }
     else {
@@ -30,10 +32,33 @@ function Checker(string,number) {
     }
 }
 
-function CheckerEmail(string,number) {
+async function CheckerEmail(string,number) {
     valor = string[0].value
-    console.log("Esto es el email",string)
-    if (valor.length === 0 || !(string[0].value.includes("@"))) {
+    console.log("Esto es el email",valor)
+    resultAPI = ""
+    const url = 'https://email-validator8.p.rapidapi.com/api/v2.0/email';
+    const options = {
+	method: 'POST',
+	headers: {
+		'content-type': 'application/x-www-form-urlencoded',
+		'X-RapidAPI-Key': 'f727b70df3msh31d43fbed324c8ap15b18bjsn9b3ab175783e',
+		'X-RapidAPI-Host': 'email-validator8.p.rapidapi.com'
+	},
+	body: new URLSearchParams({
+		email: valor
+	})
+    };
+
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        console.log(result);
+        resultAPI = result
+    } catch (error) {
+        console.error(error);
+    }
+    console.log(resultAPI,"fuera del fetch")
+    if (resultAPI.valid == false) {
         mensajeRojo[number].style.visibility = "visible";
         string[0].style.borderColor = "red";
         setTimeout(function(){

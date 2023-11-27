@@ -124,6 +124,7 @@ h1 {
 }
 .error-mnj {
     visibility: hidden;
+    animation-delay: 0s;
     color: red;
     position: relative;
     left: 63%;
