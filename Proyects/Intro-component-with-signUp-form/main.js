@@ -36,27 +36,30 @@ async function CheckerEmail(string,number) {
     valor = string[0].value
     console.log("Esto es el email",valor)
     resultAPI = ""
-    const url = 'https://email-validator8.p.rapidapi.com/api/v2.0/email';
-    const options = {
-	method: 'POST',
-	headers: {
-		'content-type': 'application/x-www-form-urlencoded',
-		'X-RapidAPI-Key': 'f727b70df3msh31d43fbed324c8ap15b18bjsn9b3ab175783e',
-		'X-RapidAPI-Host': 'email-validator8.p.rapidapi.com'
-	},
-	body: new URLSearchParams({
-		email: valor
-	})
+    var http = require("https");
+    var options = {
+      "method": "GET",
+      "hostname": "api.kickbox.io",
+      "port": null,
+      "path": "/v2/verify?timeout=6000&email=EMAIL&apikey=test_e5f32e1012686c28daaf6f743781895aa0f65cc0f15336cce95ad73a52d3d28b",
+      "headers": {}
     };
-
-    try {
-        const response = await fetch(url, options);
-        const result = await response.json();
-        console.log(result);
-        resultAPI = result
-    } catch (error) {
-        console.error(error);
-    }
+    
+    var req = http.request(options, function (res) {
+      var chunks = [];
+    
+      res.on("data", function (chunk) {
+        chunks.push(chunk);
+      });
+    
+      res.on("end", function () {
+        var body = Buffer.concat(chunks);
+        console.log(body.toString());
+      });
+    });
+    
+    req.write("{}");
+    req.end();
     console.log(resultAPI,"fuera del fetch")
     if (resultAPI.valid == false) {
         mensajeRojo[number].style.visibility = "visible";
