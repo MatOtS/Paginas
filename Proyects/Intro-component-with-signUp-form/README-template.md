@@ -45,7 +45,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://proyectos-2b6kx4ypl-matots-projects.vercel.app/Proyects/Intro-component-with-signUp-form/Index.html]
 
 ## My process
 
@@ -88,13 +88,12 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I feel the JS code is too simple, it works for the purpose of the exersice and just that.
+One thing I'm not proud of is my way of doing the responsive of the landing page, I'm sure that are more efficient ways of doing it but I'm clearly unaware of them.
 
 ### Useful resources
 
-- https://rapidapi.com/hub - This is a web with a lot of APIs that are "free" of use, I've used the a email validator API.
+- https://www.disify.com/ - The email validator API that I used, it's perfect since it does not required api keys that I need to show in the code.
 
 
 

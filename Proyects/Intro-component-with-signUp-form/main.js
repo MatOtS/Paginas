@@ -19,12 +19,12 @@ function Checker(string,number) {
         setTimeout(function(){
         mensajeRojo[number].style.visibility = "visible";
         string[0].style.borderColor = "red";
-         },970)
+         },100)
 
         setTimeout(function(){
             string[0].style.borderColor = "black";
 
-        },4000)
+        },3000)
         
     }
     else {
@@ -34,34 +34,22 @@ function Checker(string,number) {
 
 async function CheckerEmail(string,number) {
     valor = string[0].value
+    if (valor.length == 0) {
+        valor = null
+    }
     console.log("Esto es el email",valor)
-    resultAPI = ""
-    var http = require("https");
-    var options = {
-      "method": "GET",
-      "hostname": "api.kickbox.io",
-      "port": null,
-      "path": "/v2/verify?timeout=6000&email=EMAIL&apikey=test_e5f32e1012686c28daaf6f743781895aa0f65cc0f15336cce95ad73a52d3d28b",
-      "headers": {}
+    apiresponse = ""
+
+    var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
     };
-    
-    var req = http.request(options, function (res) {
-      var chunks = [];
-    
-      res.on("data", function (chunk) {
-        chunks.push(chunk);
-      });
-    
-      res.on("end", function () {
-        var body = Buffer.concat(chunks);
-        console.log(body.toString());
-      });
-    });
-    
-    req.write("{}");
-    req.end();
-    console.log(resultAPI,"fuera del fetch")
-    if (resultAPI.valid == false) {
+    await fetch(`https://www.disify.com/api/email/${valor}`, requestOptions)
+    .then(response => response.json())
+    .then(result => apiresponse = result)
+    .catch(error => console.log('error', error));
+    console.log(apiresponse,"fuera del fetch")
+    if (apiresponse.format == false) {
         mensajeRojo[number].style.visibility = "visible";
         string[0].style.borderColor = "red";
         setTimeout(function(){
