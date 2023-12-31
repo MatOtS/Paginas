@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color:royalblue;
+}
+.boton {
+    color: black !important;
+    background-color:snow;
+    width: 35%;
+    border-radius: 5px;
+    padding: 15px 0px 15px 0px;
+    margin: 5% 0px 15px 40px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-weight:bold;
+    font-size: 16px !important;
+    font-family: sans-serif;
+    cursor:pointer;
+    text-align: center;
+}
+a,
+a:link,
+a:visited,
+a:focus,
+a:hover,
+a:active {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+a:-webkit-any-link {
+    color:unset;
+    cursor: unset;
+    text-decoration: unset;
+}
