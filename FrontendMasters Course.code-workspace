@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "FrontendMasters Course"
+		},
+		{
+			"path": "Motion"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Motion",
+		"liveServer.settings.root": "/"
+	}
+}
